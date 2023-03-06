@@ -3,3 +3,8 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.toolbar-button:hover {
+  transform: translateY(-0.5rem);
+  transition: 0.3s;
+}
