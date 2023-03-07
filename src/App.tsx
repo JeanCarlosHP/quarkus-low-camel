@@ -1,10 +1,9 @@
 import { useCallback } from "react";
 import ReactFlow, { Background, Controls, BackgroundVariant, Node, ConnectionMode, useEdgesState, Connection, addEdge, useNodesState } from "reactflow"
-import * as Toolbar from '@radix-ui/react-toolbar'
 import 'reactflow/dist/style.css'
 import DefaultEdge from "./components/edges/DefaultEdge";
 
-import { Square } from './components/nodes/Rest'
+import { Rest } from './components/nodes/Rest'
 import { Sidebar } from "./components/sidebar/Sidebar";
 
 const reactFlowStyle = {
@@ -12,7 +11,7 @@ const reactFlowStyle = {
 };
 
 const NODE_TYPES = {
-  square: Square,
+  rest: Rest,
 }
 
 const EDGE_TYPES = {
@@ -22,7 +21,7 @@ const EDGE_TYPES = {
 const INITIAL_NODES = [
   {
     id: crypto.randomUUID(),
-    type: 'square',
+    type: 'rest',
     position: {
       x: 250,
       y: 250
@@ -31,7 +30,7 @@ const INITIAL_NODES = [
   },
   {
     id: crypto.randomUUID(),
-    type: 'square',
+    type: 'rest',
     position: {
       x: 650,
       y: 250
@@ -66,29 +65,29 @@ function App() {
 
   return (
     <div style={{ width: '100vw', height: '100vh' }}>
-      <ReactFlow 
-        style={reactFlowStyle}
-        nodeTypes={NODE_TYPES}
-        edgeTypes={EDGE_TYPES}
-        nodes={nodes}
-        edges={edges}
-        onEdgesChange={onChangeEdges}
-        onConnect={onConnect}
-        onNodesChange={onChangeNodes}
-        connectionMode={ConnectionMode.Loose}
-        defaultEdgeOptions={{
-          type: 'default',
-        }}
-      >
-        <Background 
-          variant={BackgroundVariant.Lines} 
-          gap={10} 
-          color='#44475a'
-        />
-        <Controls />
-      </ReactFlow>
+        <ReactFlow 
+          style={reactFlowStyle}
+          nodeTypes={NODE_TYPES}
+          edgeTypes={EDGE_TYPES}
+          nodes={nodes}
+          edges={edges}
+          onEdgesChange={onChangeEdges}
+          onConnect={onConnect}
+          onNodesChange={onChangeNodes}
+          connectionMode={ConnectionMode.Loose}
+          defaultEdgeOptions={{
+            type: 'default',
+          }}
+        >
+          <Background 
+            variant={BackgroundVariant.Lines} 
+            gap={10} 
+            color='#44475a'
+          />
+          <Controls />
+        </ReactFlow>
 
-      <Sidebar />
+        <Sidebar />
     </div>
   )
 }

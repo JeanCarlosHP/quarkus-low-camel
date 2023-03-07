@@ -3,7 +3,7 @@ import { NodeProps, Handle, Position } from 'reactflow'
 
 import "@reactflow/node-resizer/dist/style.css"
 
-export function Square(props: NodeProps) {
+export function Rest(props: NodeProps) {
   const handleStyle = {
     base: {
       backgroundColor: '#1e3557', 

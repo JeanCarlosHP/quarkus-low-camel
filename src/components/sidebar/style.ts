@@ -1,4 +1,3 @@
-import { Background } from 'reactflow';
 import styled from 'styled-components'
 
 export const Container = styled.div`
@@ -25,11 +24,9 @@ export const Title = styled.h1`
 
 export const ListComponents = styled.ul`
   list-style: none;
-  padding: 0;
 
   display: flex;
-  flw-wrap: wrap;
+  flex-wrap: wrap;
   gap: 1rem;
-  align-items: flex-start;
-
+  justify-content: center;
 `
