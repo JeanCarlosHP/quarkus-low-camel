@@ -9,7 +9,7 @@ export function Sidebar(props: any) {
       <Title>Camel Components</Title>
 
       <ListComponents>
-        <CamelComponent name="Rest" imagePath={restImage} />
+        <CamelComponent name="Rest" imagePath={restImage} nodes={props.nodes} setNodes={props.setNodes} />
       </ListComponents>
     </Container>
   );

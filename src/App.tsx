@@ -47,21 +47,6 @@ function App() {
       return setEdges(edges => addEdge(connection, edges))
     }, []
   )
-  
-  function addSquareNode() {
-    setNodes(nodes => [
-      ...nodes, 
-      {
-        id: crypto.randomUUID(),
-        type: 'square',
-        position: { 
-          x: 850,
-          y: 250
-        },
-        data: {}
-      }
-    ])
-  }
 
   return (
     <div style={{ width: '100vw', height: '100vh' }}>
@@ -87,7 +72,7 @@ function App() {
           <Controls />
         </ReactFlow>
 
-        <Sidebar />
+        <Sidebar nodes={nodes} setNodes={setNodes} />
     </div>
   )
 }
