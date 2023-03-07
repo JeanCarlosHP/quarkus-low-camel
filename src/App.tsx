@@ -4,10 +4,11 @@ import * as Toolbar from '@radix-ui/react-toolbar'
 import 'reactflow/dist/style.css'
 import DefaultEdge from "./components/edges/DefaultEdge";
 
-import { Square } from './components/nodes/Square'
+import { Square } from './components/nodes/Rest'
+import { Sidebar } from "./components/sidebar/Sidebar";
 
 const reactFlowStyle = {
-  background: '#262626',
+  background: '#282a36',
 };
 
 const NODE_TYPES = {
@@ -82,37 +83,12 @@ function App() {
         <Background 
           variant={BackgroundVariant.Lines} 
           gap={10} 
-          color='#424242'
+          color='#44475a'
         />
         <Controls />
       </ReactFlow>
 
-      <Toolbar.Root style={{ 
-        position: "fixed", 
-        bottom: "20px", 
-        transform: "translateX(200%)",
-        backgroundColor: "#fff", 
-        border: "2px solid #cecece",
-        borderRadius: "16px", 
-        width: "24rem", 
-        height: "5rem", 
-        overflow: "hidden",
-        padding: "0.5rem", 
-      }}>
-        <Toolbar.Button 
-          style={{
-            backgroundColor: "#0e1929",
-            width: "5rem",
-            height: "5rem",
-            marginTop: "1rem",
-            borderRadius: "16px"
-          }}
-          className="toolbar-button"
-          onClick={addSquareNode}
-        >
-
-        </Toolbar.Button>
-      </Toolbar.Root>
+      <Sidebar />
     </div>
   )
 }
